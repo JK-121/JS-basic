@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Object
+
+        let person = {
+            firstName: "John", //fistName key, John value
+            lastName: "Bur", // , 필수
+            age: 30,
+            tel: "01012345678",
+            email: "dddd@ddd.com"
+        };
+
+        console.log(person.age); //. 이용
+
+        person.age = 31;
+        console.log(person.age);
+
+        console.log(person["firstName"]);
+
+        let firstNameKey = "firstName";
+        console.log(person.firstNameKey); //error
+        console.log(person[firstNameKey]);
+
+        let X = "";
+        console.log(person[X]);
+    </script>
+</body>
+
+</html>
