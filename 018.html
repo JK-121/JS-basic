@@ -8,9 +8,19 @@
 <body>
     <script>
         var brands = ["애플", "구글", "페이스북", "아마존", "삼성"];
+        //for in
+        // for (var index in brands) {
+        //     console.log(brands[index]);
+        // }
 
-        for (var index in brands) {
-            console.log(brands[index]);
+        //for of
+        for (var index of brands) {
+            console.log(index);
+        }
+
+        var lang = "JavaScript"
+        for (var c of lang) {
+            console.log(c);
         }
         // console.log(brands[0]);
         // console.log(brands[1]);
