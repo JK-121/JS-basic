@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS 조건문</title>
+</head>
+
+<body>
+    <script>
+        // if(조건식) {
+        //     코드선언
+        // }
+
+        var age = 20;
+        var isAdult = false;
+
+        if (age >= 19) {
+            isAdult = true;
+        }
+
+        if (isAdult) {
+            //성인에 맞는 코드 실행
+        } else {
+            //isAdult false인 경우 이 코드 실행
+
+        }
+
+        var age = 7;
+        var isFree = false;
+
+        if (age >= 70) {
+            isFree = true;
+        } else if (age < 8) {
+            isFree = true;
+        } else {
+            isFree = false;
+        }
+
+        console.log(isFree)
+
+        var time = 23;
+        var greeting = ""
+
+        if (time <= 10) {
+            greeting = "Good mornig!"
+        } else if (time <= 16) {
+            greeting = "Good afternoon!"
+        } else if (time <= 20) {
+            greeting = "Good evening!"
+        } else {
+            greeting = "Good night!"
+        }
+
+        console.log(greeting)
+    </script>
+</body>
+
+</html>
