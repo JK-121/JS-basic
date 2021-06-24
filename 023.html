@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>객체</title>
+</head>
+
+<body>
+    <script>
+        var txt = "abcdefghijklmnopqrstuvwxyz"
+        console.log(txt.length);
+
+        var txt = "Please locate where locate occur!"
+        console.log(txt.indexOf("locate"));
+
+        //slice - 두개의 파라미터, 첫번째 - 시작인덱스번호, 두번째 - 종료인덱스번호 (옵션)
+        var text = "Apple, Banana, Kiwi";
+        console.log(text.slice(7, 13));
+        console.log(text.slice(-12)); //뒤에서부터 카운팅, substring에선 사용불가 나머지는 동일
+
+        //substr = 첫번째 - 시작인덱스 번호, 두번째 - 잘라낼 길이
+        //replace 
+        var date = "2021.06 .24";
+        console.log(date.replace(".", "-"));
+        console.log(date.replace(/\./g, "-"));
+
+        //toUpperCase()
+        var txt = "hello world";
+        console.log(txt.toUpperCase(txt));
+
+        //toLowerCase();
+        console.log(txt.toLowerCase());
+
+        //concat() - 문자열 더하기
+        var text1 = "Hello"
+        var text2 = "World"
+        console.log(text1.concat(" ", text2));
+
+        //trim()
+        var text = "     Hello World       ";
+        console.log(text);
+        console.log(text.trim());
+
+        //padStart() 첫번째 - 문자열의 총길이, 두번째 - 채울 내용
+        var txt = "5";
+        console.log(txt.padStart(4, 0));
+    </script>
+</body>
+
+</html>
