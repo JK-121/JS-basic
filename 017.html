@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS 조건문2</title>
+</head>
+
+<body>
+    <script>
+        var d = new Date();
+        var day = d.getDay();
+        console.log("day", day)
+        var dayName = "";
+
+        switch (day) {
+            case 0:
+                dayName = "일요일";
+                break;
+            case 1:
+                dayName = "월요일";
+                break;
+            case 2:
+                dayName = "화요일";
+                break;
+            case 3:
+                dayName = "수요일";
+                break;
+            case 4:
+                dayName = "목요일";
+                break;
+            case 5:
+                dayName = "금요일";
+                break;
+            case 6:
+                dayName = "토요일";
+                break;
+            default:
+                break;
+        }
+
+        console.log("날짜", dayName)
+
+        var dayNames = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"]
+        console.log(dayNames[day]);
+    </script>
+</body>
+
+</html>
