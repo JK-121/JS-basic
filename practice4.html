@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="user_data.js"></script>
+    <script>
+        //함수명 getUserList
+        //파라미터명 gender
+        //return outputUserList
+        //호출 getUserList("male");
+        //호출 getUserList("female");
+
+        var outputUserList = [];
+
+        function getUserList(x) {
+            for (user of userList) {
+                if (user.gender == x) {
+                    outputUserList.push(user.name);
+                }
+            }
+            return outputUserList;
+        }
+
+        console.table(getUserList("male"));
+    </script>
+</body>
+
+</html>
