@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function add(n1, n2) {
+            return n1 + n2;
+        }
+
+        function minus(n1, n2) {
+            return n1 - n2;
+        }
+
+        function multiple(n1, n2) {
+            return n1 * n2;
+        }
+
+        function divide(n1, n2) {
+            return n1 / n2;
+        }
+
+        function calculator(n1, operator, n2) {
+            if (operator == "+") {
+                return add(n1, n2);
+            } else if (operator == "-") {
+                return minus(n1, n2);
+            } else if (operator == "*") {
+                return multiple(n1, n2);
+            } else if (operator == "/") {
+                return divide(n1, n2);
+            }
+        }
+        console.log(calculator(4, "/", 2));
+    </script>
+</body>
+
+</html>
