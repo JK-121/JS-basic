@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [
+            [1, 2, 3, 4, 5],
+            [3, 12, 33, 24, 15, 23],
+            [4, 7, 12, 3, 9],
+            [12, 32, 56, 23, 90],
+            [5, 9, 7, 21, 19, 4],
+            [5, 9, 7, 21, 19]
+        ];
+
+        function printArray(x) {
+            let length1 = x.length; // 5
+            for (let i = 0; i < length1; i++) {
+                // x[i] // [1,2,3,4,5]
+                let length2 = x[i].length; // 5 첫번째 array 길이
+                for (let j = 0; j < length2; j++) {
+                    //x[i][j]
+                    console.log(x[i][j]);
+                }
+
+            }
+
+        }
+
+        console.log(arr);
+    </script>
+</body>
+
+</html>
