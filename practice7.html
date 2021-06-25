@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="user_data.js"></script>
+    <script>
+        var outputUserList = [];
+
+        function getUserList(x, y, z) {
+            for (user of userList) {
+                if (user.gender == x && (user.age >= y || user.age <= z)) {
+                    outputUserList.push(user.name);
+                }
+
+            }
+            return outputUserList;
+        }
+
+        console.table(getUserList("male", 25, 35));
+    </script>
+</body>
+
+</html>
