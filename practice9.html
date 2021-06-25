@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="user_data.js"></script>
+    <script>
+        //1.나이의 총합
+        //2.나이의 평균
+        //3.최고령자
+        //4.최연소자
+
+        function getUser() {
+            let sum = 0;
+            let maxAge = 0;
+            let minAge = 99;
+
+            for (var user of userList) {
+                sum = sum + user.age;
+
+                if (user.age > maxAge) {
+
+                    maxAge = user.age;
+                }
+
+                if (user.age < minAge) {
+
+                    minAge = user.age;
+                }
+            }
+
+            let avg = sum / userList.length;
+
+            return {
+                sum: sum,
+                avg: avg,
+                maxAge: maxAge,
+                minAge: minAge
+            }
+        }
+
+        let userMath = getUser();
+        console.table(userMath);
+    </script>
+</body>
+
+</html>
