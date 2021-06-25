@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var x = 123;
+        x.toString();
+        console.log(x);
+
+        //toFixed()
+        var x = 9.656;
+        console.log(x.toFixed(2));
+
+        //toPrecsion()
+        console.log(x.toPrecision(2)); //총 자리수
+
+        //parseInt()
+        var x = "10";
+        console.log(parseInt(x));
+        console.log(parseInt("10.624")); //10출력 (정수값만 다룬다.)
+        console.log(parseInt("10 20 30")); //10출력 (첫번째 발견된 숫자만 출력)
+        console.log(parseInt("10 years")); //10출력
+        console.log(parseInt("years 10")); //NaN (Not a Number)
+
+        //parseFloat() 소수점까지 포함
+
+        console.log(Number.MAX_VALUE);
+        console.log(Number.MAX_SAFE_INTEGER);
+    </script>
+</body>
+
+</html>
