@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var now = new Date();
+
+
+        // function getIntervalDate(intervalDay) {
+        //     var intervalDay = new Date(now.getTime() - (86, 400 * intervalDay));
+        // }
+
+        // console.log(getIntervalDate(5));
+
+        function getIntervalDate(intervalDay, format) {
+            var now = new Date();
+            var d = new Date(now.getTime() + ((60 * 60 * 24 * 1000) * intervalDay));
+            var year = d.getFullYear();
+            var month = d.getMonth() + 1;
+            var day = d.getDate();
+
+            return format.replace("YYYY", year).replace("MM", month.toString().padStart(2, 0)).replace("DD", day);
+            // year + "/" + month.toString().padStart(2, 0) + "/" + day;
+        }
+
+        console.log(getIntervalDate(5, "YYYY-MM-DD"));
+    </script>
+</body>
+
+</html>
