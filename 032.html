@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Math 객체
+
+        //round() - 파라미터로 받은 숫자형 데이터를 반올림 처리.
+        console.log(Math.round(4.9));
+
+        //ceil() - 무조건 올림 처리해서 정수로 만듦.
+        console.log(Math.ceil(4.4));
+
+        //floor() - 무조건 내림
+        console.log(Math.floor(4.9));
+
+        //trunc() - 무조건 정수 부분만 반환.
+        console.log(Math.trunc(4.9));
+
+        //sign()-양수(1)인지 음수(-1)인지 판단.
+        console.log(Math.sign(-213));
+
+        //pow() - 제곱근.
+        console.log(Math.pow(8, 2));
+
+        //sqrt() - 루트값.
+        console.log(Math.sqrt(121));
+
+        //abs() - 절대값.
+        console.log(Math.abs(-4.7));
+
+        //min(), max()
+        console.log(Math.min(2, 3, 4));
+        console.log(Math.max(2, 3, 4));
+
+        //random() - 난수(0 < x < 1) 추출.
+        console.log(Math.random());
+        console.log(Math.trunc(Math.random() * 10)); // (0 < x <9)
+
+        function getRandomInterger(min, max) {
+            return Math.trunc(Math.random() * (max - min + 1)) + min;
+        }
+
+        console.log(getRandomInterger(2, 50));
+    </script>
+</body>
+
+</html>
