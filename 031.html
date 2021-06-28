@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Map</title>
+</head>
+
+<body>
+    <script src="user_data.js"></script>
+    <script>
+        var myMap = new Map();
+        myMap.set("female", 1);
+        console.log(myMap.get("female"));
+
+        for (var user of userList) {
+            if (myMap.has(user.gender)) {
+                myMap.set(user.gender, myMap.get(user.gender) + 1)
+            } else {
+                myMap.set(user.gender, 1);
+            }
+        }
+
+        console.log(myMap.keys());
+        console.log(myMap.values());
+    </script>
+</body>
+
+</html>
