@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function rspPlayer(userRsp) {
+        //     const arrRsp = ["가위", "바위", "보"];
+        //     var winner = ["1", "-1", "0"]
+        //     for (var Rsp of arrRsp) {
+        //         var userRsp = Rsp[Math.trunc(Math.random() * 3)];
+        //         var playerRsp = Rsp[Math.trunc(Math.random() * 3)];
+
+
+
+
+
+        //         return userRsp
+        //         playerRsp
+        //         winner
+
+        //     }
+        // }
+
+        // function rspPlayer(userRsp) {
+        //     const rsp = ["가위", "바위", "보"];
+        //     const playerRsp = rsp[Math.trunc(Math.random() * 3)];
+
+        //     if (userRsp == playerRsp) {
+        //         return {
+        //             "userRsp": userRsp,
+        //             "playerRsp": playerRsp,
+        //             "winner": 0
+        //         };
+        //     } else if (userRsp == "가위") {
+        //         if (playerRsp == "보") {
+        //             return {
+        //                 "userRsp": userRsp,
+        //                 "playerRsp": playerRsp,
+        //                 "winner": 1
+        //             };
+        //         } else {
+        //             return {
+        //                 "userRsp": userRsp,
+        //                 "playerRsp": playerRsp,
+        //                 "winner": -1
+        //             };
+        //         }
+        //     }
+        // }
+
+        // console.table(rspPlayer("가위"));
+
+        function rspPlayer(userRsp) {
+            const rsp = ["가위", "바위", "보"];
+            const playerRsp = rsp[Math.trunc(Math.random() * 3)];
+            const winValue = {
+                "가위": "보",
+                "바위": "가위",
+                "보": "바위"
+            }
+            return {
+                "userRsp": userRsp,
+                "playerRsp": playerRsp,
+                "winner": (userRsp == playerRsp) ? "무" : (winValue[userRsp] == playerRsp) ? "승" : "패"
+            }
+        }
+
+        console.table(rspPlayer("가위"));
+    </script>
+</body>
+
+</html>
