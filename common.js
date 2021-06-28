@@ -21,3 +21,7 @@ function getAgeGroup(users, keyAge) {
 
     return userAgeGroup;
 }
+
+function getRandomInterger(min, max) {
+    return Math.trunc(Math.random() * (max - min + 1)) + min;
+}
