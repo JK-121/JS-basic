@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log((new Date()).getDay());
+
+        function parkingFee(time, buy) {
+
+            const isWeekend = ((new Date()).getDay() % 6) == 0 ? true : false;
+
+            if (buy >= 150000) {
+                time = time - 3;
+            } else if (buy >= 100000) {
+                time = time - 2;
+            } else if (buy >= 50000) {
+                time = time - 1;
+            }
+
+            if (time <= 0) {
+                return 0;
+            } else {
+                var minutes = time * 60;
+                if (minutes <= 0) {
+                    return 0;
+                } else if (minutes <= 30) {
+                    return isWeekend ? 5000 : 2000;
+                } else {
+                    return (isWeekend ? 5000 : 2000) + ((minutes - 30) / 10) * (isWeekend ? 2000 : 1000);
+                }
+            }
+
+        }
+
+        console.table(parkingFee(3, 100000));
+    </script>
+
+</body>
+
+</html>
