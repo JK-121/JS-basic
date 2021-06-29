@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>this</title>
+</head>
+
+<body>
+    <button type="button" onclick="doSerch(this)">조회</button>
+    <select name="" id="" onchange="doChange(this);">
+        <option value="1">A</option>
+        <option value="2">B</option>
+        <option value="3">C</option>
+        <option value="4">D</option>
+    </select>
+    <script>
+        //this 1. this = Window 객체
+        console.log(this);
+
+        function myfunction() {
+            console.log(this);
+        }
+
+        function doSerch(obj) {
+            console.log(obj);
+        }
+
+        function doChange(obj) {
+            console.log(obj);
+        }
+
+        let person = {
+            fistName: "John",
+            lastName: "Bur",
+            getFullName: function () {
+                return this.firstName + "" + this.lastName;
+            }
+        };
+    </script>
+</body>
+
+</html>
