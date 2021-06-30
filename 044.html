@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        //Promise
+        const url = "https://07495398-ac0d-4c0e-a4a1-0b565ccd5d11.mock.pstmn.io/";
+
+
+        // var data = axios.get(url);
+
+        // console.log(data);
+
+        //
+
+        // function getData() {
+        //     return new Promise(function (resolve, reject) {
+        //         axios.get(url).then(function (response) {
+        //             resolve(response.data);
+        //         });
+        //     });
+        // }
+
+        // getData().then(function (data) {
+        //     console.log(data);
+        // });
+
+        //Async-Await
+
+        async function api(url) {
+            return (await axios.get(url)).data;
+        }
+
+        async function getData(path) {
+            var data = (await api(url + path));
+            console.log(path, data);
+        }
+
+        getData("getUserList");
+        getData("getDrinkList");
+
+        fetch(url + "getUserList").then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            console.log(data);
+
+        });
+    </script>
+</body>
+
+</html>
