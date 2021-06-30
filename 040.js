@@ -9,8 +9,12 @@ var person = {
 }
 
 var type = "student";
-var scope = {
+var score = {
     [type]: "John Bur",
     //student: "John Bur",
     score: 95
 };
+
+// score.student
+// score["student"]
+// score[type]
