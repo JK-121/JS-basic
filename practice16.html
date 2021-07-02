@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document</title>
+  <style>
+    @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Hanna', sans-serif;
+
+    }
+
+    .box-container {
+      margin: outo;
+      width: 515px;
+    }
+
+    .txt {
+      width: 515px;
+      height: 100px;
+      overflow: auto;
+      -ms-overflow-style: none;
+    }
+
+    .txt::-webkit-scrollbar {
+      display: none;
+    }
+
+    .sel {
+      height: 30px;
+      width: 150px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box-container">
+    <h1>
+      <center>지하철 요금 조회</center>
+    </h1>
+    <div>
+      <select name="" id="start" class="sel">
+        <option value="" selected hidden>출발역을 선택하세요.</option>
+        <option value=""></option>
+
+      </select>
+
+      <select name="" id="end" class="sel">
+        <option value="" selected hidden>도착역을 선택하세요.</option>
+        <option value=""></option>
+      </select>
+
+      <select name="" id="age" class="sel">
+        <option value="" selected hidden>나이를 선택하세요.</option>
+        <option value="adult">성인</option>
+        <option value="student">청소년</option>
+        <option value="kid">아동</option>
+      </select>
+      <button style="width:50px; height:30px;" onclick="calFee();">조회</button>
+    </div>
+
+    <br>
+    <div>
+      <input type="text" class="txt" id="output">
+    </div>
+  </div>
+  <script>
+    const subwayList = ["영등포구청역", "당산역", "합정역", "홍대입구역", "신촌역", "이대역", "아현역", "충정로역", "시청역", "을지로3가역", "을지로4가역",
+      "동대문역사문화공원역", "신당역", "상왕십리역", "왕십리역", "한양대역", "뚝섬역", "성수역", "건대입구역", "구의역", "강변역", "잠실나루역", "잠실역", "종합운동장역",
+      "삼성역", "선릉역", "역삼역", "강남역", "서초역", "방배역", "사당역", "낙성대역", "서울대입구역", "봉천역", "신림역", "신대방역", "구로디지털단지역", "대림역",
+      "신도림역", "문래역"
+    ];
+
+    const intervalDistance = 3170;
+    //성인일반 - 기본운임 : 10km 이내 - 1250원
+    //청소년 - 기본운임 : 10km 이내 - 720원
+    //어린이 - 기본운임 : 10km 이내 - 450원
+
+    //[추가운임]
+    //10~50km 이내 - 5km 마다 100원 추가
+    //50km 초가 - 8km 마다 100원 추가
+
+    //문제
+    //출발역, 도착역을 선택하고, (성인/청소년/어린이)를 선택한 후 조회 버튼을 클릭하면
+    //요금을 계산해서 화면에 보여준다.
+
+    function subFee(departure, arrive, ageGroup) {
+
+
+
+      for (var index in subwayList) {
+
+        if (subwayList[index] == departure) {
+          var dep = parseInt(index);
+        } else if (subwayList[index] == arrive) {
+          var arr = parseInt(index);
+        }
+
+      }
+
+      if (arr < dep) {
+        totalDistance = (subwayList.length - dep + arr) * intervalDistance;
+      } else {
+        totalDistance = (arr - dep) * intervalDistance;
+      }
+      // var totalDistance = (subwayList.length - dep + arr) * intervalDistance;
+
+
+
+
+
+      if (totalDistance <= 10000) {
+        if (ageGroup == "adult") {
+          return 1250;
+        } else if (ageGroup == "student") {
+          return 720;
+        } else if (ageGroup == "kid") {
+          return 450;
+        }
+      }
+
+      if (totalDistance > 10000 && totalDistance <= 50000) {
+        if (ageGroup == "adult") {
+          return 1250 + (Math.ceil((totalDistance - 10000) / 5000) * 100);
+        } else if (ageGroup == "student") {
+          return 720 + (Math.ceil((totalDistance - 10000) / 5000) * 100);
+        } else if (ageGroup == "kid") {
+          return 450 + (Math.ceil((totalDistance - 10000) / 5000) * 100);
+        }
+      }
+
+      if (totalDistance > 50000) {
+        if (ageGroup == "adult") {
+          return 2050 + (Math.ceil((totalDistance - 10000) / 8000) * 100);
+        } else if (ageGroup == "student") {
+          return 1520 + (Math.ceil((totalDistance - 10000) / 8000) * 100);
+        } else if (ageGroup == "kid") {
+          return 1250 + (Math.ceil((totalDistance - 10000) / 8000) * 100);
+        }
+
+      }
+
+    }
+
+    function loadSubways() {
+      var h = [];
+      for (var index in subwayList) {
+        h.push(`<option value="${index}">${subwayList[index]}</option>`);
+      }
+
+      document.getElementById("start").innerHTML = h.join("");
+      document.getElementById("end").innerHTML = h.join("");
+    }
+
+    loadSubways();
+
+    function calFee() {
+
+      var startStation = document.getElementById("start").value;
+
+
+
+      log.console(startStation);
+
+      subFee(startStaion);
+
+    }
+
+    // console.log();
+  </script>
+</body>
+
+</html>
